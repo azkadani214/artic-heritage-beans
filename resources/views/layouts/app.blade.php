@@ -54,6 +54,67 @@
 
     @include('partials.footer')
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281234567890" class="cs_whatsapp_btn" target="_blank">
+        <div class="cs_whatsapp_btn_in">
+            <span class="cs_whatsapp_icon"><i class="fa-brands fa-whatsapp"></i></span>
+            <span class="cs_whatsapp_text">Lets Talk</span>
+        </div>
+    </a>
+
+    <style>
+        .cs_whatsapp_btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cs_whatsapp_btn_in {
+            display: flex;
+            align-items: center;
+            background: #25D366;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        .cs_whatsapp_icon {
+            font-size: 24px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .cs_whatsapp_text {
+            font-weight: 700;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        .cs_whatsapp_btn:hover .cs_whatsapp_btn_in {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            background: #128C7E;
+        }
+        @media screen and (max-width: 991px) {
+            .cs_whatsapp_btn {
+                bottom: 20px;
+                right: 20px;
+            }
+            .cs_whatsapp_text {
+                display: none;
+            }
+            .cs_whatsapp_btn_in {
+                padding: 15px;
+                border-radius: 50%;
+            }
+            .cs_whatsapp_icon {
+                margin-right: 0;
+            }
+        }
+    </style>
+
     <!-- Script -->
     <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.slick.min.js') }}"></script>

@@ -5,24 +5,18 @@
             <div class="cs_main_header_in">
                 <div class="cs_main_header_left">
                     <a class="cs_site_branding" href="{{ url('/') }}">
-                        <img src="{{ asset('assets/img/logo.svg') }}" alt="Logo">
+                        <img src="{{ asset('assets/img/logo-artic-beans.png') }}" alt="Artic Heritage Beans" style="max-height: 60px;">
                     </a>
                 </div>
                 <div class="cs_main_header_center">
                     <div class="cs_nav cs_heading_color">
                         <nav class="cs_nav_list_wrap text-uppercase">
                             <ul class="cs_nav_list">
-                                <li><a href="#">ABOUT</a></li>
-                                <li><a href="#">SERVICES</a></li>
-                                <li><a href="#">PROJECTS</a></li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">MORE</a>
-                                    <ul>
-                                        <li><a href="#">GALLERY</a></li>
-                                        <li><a href="#">BLOG</a></li>
-                                        <li><a href="#">CONTACT</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{ url('/about') }}">ABOUT</a></li>
+                                <li><a href="{{ url('/products') }}">PRODUCTS</a></li>
+                                <li><a href="{{ url('/#origins') }}">COFFEE ORIGINS</a></li>
+                                <li><a href="{{ url('/export-services') }}">EXPORT SERVICES</a></li>
+                                <li><a href="{{ url('/contact') }}">CONTACT</a></li>
                             </ul>
                         </nav>
                     </div>
