@@ -9,7 +9,7 @@
     <!-- Favicon Icon -->
     <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
     <!-- Site Title -->
-    <title>@yield('title', 'LeafLife - Garden Landscape Design Service Website')</title>
+    <title>@yield('title', 'Artic Heritage Beans')</title>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
