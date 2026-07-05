@@ -64,8 +64,8 @@ COPY --from=vendor /app/vendor/ /var/www/html/vendor/
 COPY --from=frontend /app/public/build/ /var/www/html/public/build/
 
 # Generate autoloader
-RUN cp /usr/bin/composer /usr/bin/composer \
-    && composer dump-autoload --optimize --no-dev --classmap-authoritative \
+COPY --from=vendor /usr/bin/composer /usr/bin/composer
+RUN composer dump-autoload --optimize --no-dev --classmap-authoritative \
     && rm /usr/bin/composer
 
 # Set permission (Di dalam container, untuk direktori bawaan)
