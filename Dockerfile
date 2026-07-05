@@ -16,7 +16,7 @@ COPY tailwind.config.js* postcss.config.js* ./
 RUN npm run build || echo "Vite build skipped or failed, check if Vite is used"
 
 # Stage 3: Production Image
-FROM php:8.3-fpm-alpine
+FROM php:8.4-fpm-alpine
 
 # Set working directory
 WORKDIR /var/www/html
