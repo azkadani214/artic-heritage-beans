@@ -12,8 +12,6 @@ services:
       # Bind mounts untuk persisten data, sehingga aman di-backup dan diakses langsung
       - ./storage:/var/www/html/storage
       - ./bootstrap-cache:/var/www/html/bootstrap/cache
-      # Named volume untuk membagikan public directory (hasil Vite/build image) ke Nginx
-      - public_assets:/var/www/html/public
     networks:
       - bowpeople
     healthcheck:
@@ -31,9 +29,8 @@ services:
       - "${NGINX_PORT:-8080}:80"
     volumes:
       # Mount Nginx config
+      - ./:/var/www/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      # Baca public folder dari container app agar Nginx bisa menyajikan aset statis
-      - public_assets:/var/www/html/public:ro
     networks:
       - bowpeople
     depends_on:
@@ -63,6 +60,3 @@ networks:
     external: true
     name: bowpeople-network
 
-volumes:
-  # Volume ini akan diisi secara otomatis oleh Docker dari dalam image "app" saat pertama kali dijalankan
-  public_assets:

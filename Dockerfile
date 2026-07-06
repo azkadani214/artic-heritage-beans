@@ -13,7 +13,7 @@ RUN npm ci || npm install
 COPY resources/ resources/
 COPY public/ public/
 COPY tailwind.config.js* postcss.config.js* ./
-RUN npm run build || echo "Vite build skipped or failed, check if Vite is used"
+RUN npm run build
 
 # Stage 3: Production Image
 FROM php:8.4-fpm-alpine
